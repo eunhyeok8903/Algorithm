@@ -1,0 +1,10 @@
+N과M정리
+-순열은 visited를 사용하여 해당 인덱스를 사용했는지 확인해서 리스트업
+-조합은 idx를 인자로 전달하여 해당인덱스 이후부터 조합을 찾음(순서가 상관없기때문에 이전것은 볼 필요가 없음)
+
+순열과 조합 라이브러리
+from itertools import combinations,permutations
+a=[1,2,3]
+p=permutations(a,2)     //튜플형태 반환
+c=permutations(a,2)
+
