@@ -1,0 +1,4 @@
+
+-------------2차원 배열 선언/초기화------------------
+arr=[[0 for i in range(N)] for raw in range(N)]   // N*N행렬 2차원행렬
+arr[0 for i in range(N)] * N //  N^2 1차원행렬
