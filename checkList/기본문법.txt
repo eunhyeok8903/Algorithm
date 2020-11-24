@@ -1,4 +1,29 @@
 
--------------2차원 배열 선언/초기화------------------
+-------------------------------------------------
+2차원 배열 선언/초기화
+
 arr=[[0 for i in range(N)] for raw in range(N)]   // N*N행렬 2차원행렬
 arr[0 for i in range(N)] * N //  N^2 1차원행렬
+
+--------------------------------------------------
+나누기
+
+N/2 ->소수점까지 계산
+N//2 -> 내림으로 몫만 계산
+
+--------------------------------------------------
+전역변수 지역변수
+
+direction=4
+def test():
+    direction=1
+    print(direction) //1
+print(direction)//4
+
+전역변수로 사용원할때
+def test():
+    global direction
+    direction=1
+    print(direction) //1
+print(direction)//1
+

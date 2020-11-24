@@ -1,0 +1,2 @@
+공백 기준 split
+x,y,dir = map(int,input().split())
