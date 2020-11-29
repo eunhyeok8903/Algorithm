@@ -1,0 +1,12 @@
+생성
+
+from collections import deque
+q=deque()
+
+---------------------------------------------------------------------
+추가,삭제
+
+q.popleft()
+q.pop()
+q.appendleft()
+q.append()
