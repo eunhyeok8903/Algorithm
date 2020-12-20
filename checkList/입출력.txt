@@ -5,3 +5,25 @@ input입력받기
 a,b,c,d=input()
 1234입력시 1,2,3,4로
 
+------------------------------------------
+input은 굉장히 오래걸리기 때문에 readline사용
+
+import sys
+n=int(sys.stdin.readline())
+n,m=map(int,sys.stdin.readline().split()) #튜플반환된것을 할당
+
+ex)
+3 3
+1 1 0
+1 0 1
+1 1 1
+
+->
+n,m=map(int,sys.stdin.readline().split())
+for i in range(n):
+    li.append(list(map(int,input().split())  #이차원배열로 받기(map에서 튜플반환된것을 list로 만들어주는거 잊지말기)
+
+for i in range(n):
+    li.append(list(map(int,sys.stdin.readline().split())))
+
+#근데 append보다도 미리 list에 값을 초기화시켜놓고 할당받는게 더빠름
