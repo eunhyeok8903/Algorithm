@@ -18,4 +18,15 @@ for i in c:
 # from itertools import combinations,permutations
 # a=[1,2,3]
 # p=permutations(a,2)     //튜플형태 반환
-# c=permutations(a,2)
+# c=combinations(a,2)
+"""
+from itertools import combinations,permutations
+
+사전순 조합->정렬후 조합
+combinations나 permutations는 튜플형태 반환이라서
+c= list(combinations())로 받으면
+[(a,b,c), (a,c,b),(b,a,c) ] 이런꼴이다.
+
+for tu in c: 로 
+각 튜플을 다시 list로 만들어 사용하던지 a,b,c=tu로 받아서 사용하던지 
+"""
