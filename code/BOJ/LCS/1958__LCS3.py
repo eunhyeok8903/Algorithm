@@ -18,3 +18,11 @@ for i in range(1,len1+1):
                 dp[k][j][i]=max(dp[k-1][j][i],dp[k][j-1][i],dp[k][j][i-1])
 
 print(dp[-1][-1][-1])
+"""
+3차원 배열
+[높][세][가]
+dp=[[[0]*(len1+1) for _ in range(len2+1)] for _ in range(len3+1)] // 가로 세로 높이
+
+
+
+"""
