@@ -1,20 +1,38 @@
 from sys import stdin
+def rotate(n,d):
+    global li
+    l_v=li[n][2]
+    r_v=li[n][6]
 
-S1=stdin.readline().rstrip()
-S2=stdin.readline().rstrip()
-S3=stdin.readline().rstrip()
+    #회전
+    if d==1:
+        temp=li[n][7]
+        for i in range(7):
+            li[n][7-i]=li[n][6-i]
+        li[n][0]=temp
+    elif d==-1:
+        temp=li[n][0]
+        for i in range(7):
+            li[n][i]=li[n][i+1]
+        li[n][7]=temp
 
-len1=len(S1)
-len2=len(S2)
-len3=len(S3)
+    #전이
+    print(n,d)
+    if n!=1 and l_v!=li[n-1][2]:
+        rotate(n-1,-d)
+    elif n!=4 and r_v!=li[n+1][6]:
+        rotate(n+1,-d)
 
-dp=[[[0]*(len1+1) for _ in range(len2+1)] for _ in range(len3+1)]
-for i in range(1,len1+1):
-    for j in range(1,len2+1):
-        for k in range(1,len3+1):
-            if S1[i-1]==S2[j-1]==S3[k-1]:
-                dp[k][j][i]=dp[k-1][j-1][i-1]+1
-            else:
-                dp[k][j][i]=max(dp[k-1][j][i],dp[k][j-1][i],dp[k][j][i-1])
+li=[None]*5
+for i in range(1,5):
+    s=stdin.readline().rstrip()
+    li[i]=[int(ch) for ch in s]
+n=int(input())
+for i in range(n):
+    num,dir=map(int,input().split(' '))
+    rotate(num,dir)
 
-print(dp[-1][-1][-1])
+cnt=0
+for i in range(1,5):
+    cnt+=li[i][0]*pow(2,i-1)
+print(cnt)
