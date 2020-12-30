@@ -1,0 +1,25 @@
+sorted와 sort차이
+sorted는 정렬된 리스트 반환, sort는 리스트 정렬
+li=sorted(리스트,방법)
+li.sort(방법)
+
+li=['aaa','b','cc']
+#길이순으로 원소 정렬
+li.sort(key=lambda x: len(x))  // ['b','cc','aaa']
+
+
+li=[[23,45],[1,2],[2,1],[45,23]]
+#첫번째 원소 기준 오름차순 정렬
+li.sort(key=lambda x: x[0])
+print(li)
+#첫번째 원소 기준 내림차순 정렬
+li.sort(key=lambda x: x[0],reverse=True)
+print(li)
+#두번째 원소 기준 오름차순 정렬
+li.sort(key=lambda x: x[1])
+print(li)
+#두번째 원소 기준 내림차순 정렬
+li.sort(key=lambda x: x[1],reverse=True)
+print(li)
+#두번째 원소기준 오름차순 정렬하고 첫번째 원소기준 내림차순 정렬하고 싶을때는
+li.sort(key=lambda x:(x[0],-x[1])이렇게 하면 된다
