@@ -13,7 +13,7 @@ li=[[23,45],[1,2],[2,1],[45,23]]
 li.sort(key=lambda x: x[0])
 print(li)
 #첫번째 원소 기준 내림차순 정렬
-li.sort(key=lambda x: x[0],reverse=True)
+li.sort(key=lambda x: x[0],reverse=True) //이러면 두번 정렬한거라 li.sort(key=lambda x:-x[0]) 이 더 효율적이다.
 print(li)
 #두번째 원소 기준 오름차순 정렬
 li.sort(key=lambda x: x[1])

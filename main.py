@@ -1,16 +1,11 @@
 from sys import stdin
-N=int(input())
-li=[]
-for _ in range(N):
-    s,e= map(int,stdin.readline().rstrip().split())
-    li.append([s,e])
-#회의 끝나는 시간 기준 정렬
-li.sort(key=lambda x:(x[1],x[0]))
-last_e=-1
-cnt=0
-for i in range(N):
-    s,e=li[i]
-    if last_e<=s:
-        cnt+=1
-        last_e=e
-print(cnt)
+N,M=map(int,stdin.readline().strip().split())
+li=[list(map(int,stdin.readline().strip().split())) for i in range(N)]
+dp=[[0]*(N+1) for _ in range(N+1)]
+for i in range(1,N+1):
+    for j in range(1,N+1):
+        dp[i][j]=li[i-1][j-1]+dp[i][j-1]+dp[i-1][j]-dp[i-1][j-1]
+
+for _ in range(M):
+    x1,y1,x2,y2=map(int,stdin.readline().strip().split())
+    print(dp[x2][y2]-dp[x1-1][y2]-dp[x2][y1-1]+dp[x1-1][y1-1])
