@@ -7,7 +7,6 @@ li=['aaa','b','cc']
 #길이순으로 원소 정렬
 li.sort(key=lambda x: len(x))  // ['b','cc','aaa']
 
-
 li=[[23,45],[1,2],[2,1],[45,23]]
 #첫번째 원소 기준 오름차순 정렬
 li.sort(key=lambda x: x[0])
