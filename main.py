@@ -1,35 +1,44 @@
-from sys import stdin,stdout
-dr=[0,1,0,-1]
-dc=[1,0,-1,0]
-N=int(stdin.readline())
-number=int(stdin.readline())
-r,c=(N//2)+1,(N//2)+1
-arr=[[0]*(N+1) for i in range(N+1)]
-arr[r][c]=1
+from sys import stdin
 
-flag=0
+def dfs(r,c,d):
+    global cnt,dr
+    if li[r][c]==0:
+        li[r][c]=2
+        cnt+=1
+
+    # print(cnt)
+    # for i in range(N):
+    #     for j in range(M):
+    #         print(li[i][j],end=' ')
+    #     print()
+    # print("\n\n")
+
+    for i in range(4):
+        nd=(d+3)%4
+        nr=r+dr[nd]
+        nc=c+dc[nd]
+        if nr>=0 and nc>=0 and nr<N and nc<M and li[nr][nc]==0:
+            dfs(nr,nc,nd)
+            return
+        d=nd
+
+    nd=(d+2)%4
+    nr=r+dr[nd]
+    nc=c+dc[nd]
+    if nr<0 or nc<0 or nr>=N or nc>=M or li[nr][nc]==1:
+        return
+    dfs(nr,nc,d)
+
+N,M=map(int,input().split())
+r,c,d=map(int,input().split())
+li=[]
+dr=[-1,0,1,0]  # 북 동 남 서
+dc=[0,1,0,-1]
 cnt=0
-dir=0
-result_r,result_c=0,0
-for i in range(2,N*N+1):
-    if r==c and r<=(N//2)+1:
-        r-=1
-        c-=1
-        flag+=2
-        dir=0
 
-    r= r+dr[dir]
-    c= c+dc[dir]
-    arr[r][c]=i
-    cnt+=1
-    if cnt==flag:
-        cnt=0
-        dir+=1
-    if i==number:
-        result_r=r
-        result_c=c
-for i in range(1,N+1):
-    for j in range(1,N+1):
-        print(arr[i][j],end=' ')
-    print()
-print(result_r,result_c)
+for i in range(N):
+    temp=list(map(int,stdin.readline().split()))
+    li.append(temp)
+
+dfs(r,c,d)
+print(cnt)
