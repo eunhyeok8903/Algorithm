@@ -1,1 +1,14 @@
 https://wikidocs.net/4308
+https://nachwon.github.io/regular-expressions/
+
+
+import re
+
+compile() // ()안에 문자에 해당하는 정규표현식 클래스를 반환해줌
+
+# p=re.compile('[a-z]+')
+# p = re.compile('(\d+)([SDT])([*#]?)')
+p=re.compile('(\d+)([SDT])([#*]?)')    //()는 튜플형태로 나타내려고
+c=re.compile('\w*간\w*')               // \w* -> 아무 문자가 0번이상 나오고 가운데는 간, 그 뒤에도 문자 아무거나 0번 이상 나오면 되는 정규표현식
+result = c.findall('간장 간간 장간 간와 와사비')
+print(result) // 간장 간간 장간 간와
