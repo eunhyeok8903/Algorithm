@@ -1,0 +1,15 @@
+https://wikidocs.net/16038
+
+//리스트가 1차원일때
+li=[1,2,3]
+temp=li[:] //깊은 복사 됨
+
+//리스트가 2차원일때
+li=[[1,2,3],[4,5,6]]
+temp=li[:] //얕은 복사
+
+import copy
+copy.copy() //메소드도 2차원에서는 얕은 복사
+
+copy.deepcopy() //깊은 복사
+
