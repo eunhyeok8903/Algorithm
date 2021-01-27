@@ -52,6 +52,7 @@ def solution(dartResult):
     option = {'' : 1, '*' : 2, '#' : -1}
     p = re.compile('(\d+)([SDT])([*#]?)')
     dart = p.findall(dartResult)
+    print(dart)
     for i in range(len(dart)):
         if dart[i][2] == '*' and i > 0:
             dart[i-1] *= 2
@@ -59,7 +60,7 @@ def solution(dartResult):
 
     answer = sum(dart)
     return answer
-
+solution("1S2D*3T#")
 """
 문제 
 3번 다트를 던진다

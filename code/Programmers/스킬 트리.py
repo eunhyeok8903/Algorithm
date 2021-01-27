@@ -53,6 +53,7 @@ def solution(skill, skill_trees):
 
 """
 문제
+https://programmers.co.kr/learn/courses/30/lessons/49993
 선행 스킬을 배우고 난 후에 다음에 배울 수 있는 스킬이 정해져있다.
 
 skill  //스킬 트리 순서
@@ -65,6 +66,7 @@ skill_trees // 가능한지 확인해야할 스킬트리들
 문제 접근
 두가지 방법 다 생각났지만, 위상정렬로 풀어보고 싶었다.
 시간 초과가 부담되는 n이 아니여서 당연히 리스트를 이용하는게 깔끔했다.
+(n커지면 위상정렬이 맞다)
 """
 
 """
