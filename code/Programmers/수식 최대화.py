@@ -64,4 +64,11 @@ https://programmers.co.kr/learn/courses/30/lessons/67257
 3.연산
 list의 내장함수 del과 index를 이용하여 제거해준다.
 for문을 돌려서 제거하면 for문이 돌아가는 와중에 인덱스가 꼬일 수 있으므로 while사용 생각하자. 
+
+연산은 함수로 구현되어있는데
+eval이라는 편리한 내장함수가 있다.
+
+s=eval(str(v[idx])+e_+str(v[idx+1]))
+v[idx]=int(s); del v[idx+1]
+이걸로 대체 가능
 """
