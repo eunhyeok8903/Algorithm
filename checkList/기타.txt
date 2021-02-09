@@ -12,3 +12,14 @@
 파이썬은 20년 python 3.7 기준
 1초에 2000만 연산 가능하다.
 즉 N이 100만일때 NlogN이 2000만이다
+
+--------------------enumerate()------------------------------
+li=[1,2,3,4]
+for i in enumerate(li,start=1):
+    print(i)   // (1,1) (2,2) (3,3) (4,4)
+
+for i in enumerate(li):
+    print(i)    //(0,1) (1,2) (2,3) (3,4)
+
+for i,x in enumerate(li,start=1):
+    print(i,x)  //(1,1) (2,2) (3,3) (4,4)
