@@ -52,5 +52,8 @@ arr을 nxn 형태로 둘수 있지만 -> pop한 인덱스의 간선을 찾을때
 개선할 점
 1. arr보단 graph로 이름 바꾸기
 2. _사용하기
-3. 
+3. [ [] for _ in range() ] 로 vector 나타내기
+4. 
+while not dq:
+while dq:
 """
